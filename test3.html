@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Bieber Fan Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ff69b4; /* Hot pink background */
+            color: white;
+            font-family: 'Comic Neue', cursive; /* Fun font */
+            padding: 20px;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            cursor: url('https://twemoji.maxcdn.com/v/latest/72x72/2764.png'), auto; /* Heart emoji cursor */
+        }
+        header {
+            background: linear-gradient(to right, #ff1493, #ff69b4); /* Gradient header */
+            padding: 40px; /* Increased padding */
+            text-align: center;
+            animation: slideIn 1s; /* Slide in animation */
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h1 {
+            font-size: 4em; /* Larger title */
+            margin: 0;
+            text-shadow: 2px 2px #fff; /* White shadow for more impact */
+        }
+        h2 {
+            font-size: 3em; /* Larger subheadings */
+            margin-top: 30px; /* Space above subheadings */
+            text-shadow: 1px 1px #fff; /* White shadow */
+        }
+        p {
+            font-size: 1.5em; /* Larger paragraph text */
+            margin: 0;
+        }
+        .gallery img {
+            width: 100%; /* Full width of the container */
+            margin: 15px 0; /* Space between images */
+            border-radius: 15px; /* More rounded corners */
+            transition: transform 0.3s, filter 0.3s; /* Smooth hover effect */
+            cursor: pointer; /* Pointer cursor on hover */
+            transform: translateY(0); /* Initial position */
+        }
+        .gallery img:hover {
+            filter: brightness(1.2); /* Brighten image on hover */
+        }
+        .gallery img.shift {
+            transform: translateY(-10px); /* Shift up on scroll */
+            transition: transform 0.5s; /* Smooth transition */
+        }
+        .fangirl-message {
+            background-color: rgba(255, 255, 255, 0.4); /* Light background for messages */
+            padding: 15px;
+            margin: 10px 0;
+            color: #ff69b4; /* Text color */
+            border-radius: 10px; /* Rounded corners */
+            animation: bounce 1s infinite; /* Bounce animation */
+            font-size: 1.5em; /* Larger text */
+            text-align: center; /* Centered text */
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .flashing {
+            animation: flash 1s infinite; /* Flashing animation */
+        }
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        button {
+            background-color: #ff1493; /* Button color */
+            color: white;
+            border: none;
+            padding: 15px 30px; /* Increased padding */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s; /* Background transition */
+            font-size: 1.5em; /* Larger button text */
+            margin-top: 20px; /* Space above button */
+        }
+        button:hover {
+            background-color: #ff69b4; /* Change on hover */
+        }
+        footer {
+            margin-top: 40px; /* Space above footer */
+            text-align: center; /* Centered footer */
+        }
+        footer a {
+            color: white; /* Link color */
+            margin: 0 10px; /* Space between links */
+            font-size: 1.5em; /* Larger social media links */
+            transition: color 0.3s; /* Color transition */
+        }
+        footer a:hover {
+            color: #ff1493; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="flashing">Welcome to Justin's World!</h1>
+        <p>Belieber Forever!</p>
+    </header>
+    <main class="container my-4">
+        <section>
+            <h2 class="flashing">Biography</h2>
+            <p>Justin Bieber is a Canadian pop star who took the world by storm with hits like "Baby" and "Sorry." He has millions of fans worldwide and is known for his incredible voice and catchy tunes.</p>
+        </section>
+        <section class="gallery">
+            <h2 class="flashing">Gallery</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="justin1.jpg" alt="Justin 1" class="img-fluid shift" onclick="showAlert()">
+                    <img src="justin2.jpg" alt="Justin 2" class="img-fluid shift" onclick="showAlert()">
+                    <img src="justin3.jpg" alt="Justin 3" class="img-fluid shift" onclick="showAlert()">
+                    <img src="justin4.jpg" alt="Justin 4" class="img-fluid shift" onclick="showAlert()">
+                    <img src="justin5.jpg" alt="Justin 5" class="img-fluid shift" onclick="showAlert()">
+                    <img src="justin6.jpg" alt="Justin 6" class="img-fluid shift" onclick="showAlert()">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="flashing">Fangirl Messages</h2>
+            <div class="fangirl-message">OMG, Justin! You’re my everything! 💖</div>
+            <div class="fangirl-message">I dream of you every night! ☀️</div>
+            <div class="fangirl-message">Your songs make me feel alive! 💓</div>
+            <div class="fangirl-message">If I could, I would follow you to the ends of the earth! 😍</div>
+            <div class="fangirl-message">You make my heart race like no one else! 💘</div>
+            <div class="fangirl-message">I would scream your name in the middle of the night! 🌙</div>
+        </section>
+        <section>
+            <button onclick="playRandomSong()">Play Random Song</button>
+        </section>
+    </main>
+    <footer>
+        <h2 class="flashing">Follow Justin!</h2>
+        <a href="https://www.instagram.com/justinbieber/" target="_blank">Instagram</a>
+        <a href="https://twitter.com/justinbieber" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com/justinbieber" target="_blank">Facebook</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        function showAlert() {
+            alert("You clicked on a Justin Bieber image! 🎤");
+        }
+
+        function playRandomSong() {
+            const songs = [
+                "https://www.youtube.com/watch?v=kffacxfA7G4", // Baby
+                "https://www.youtube.com/watch?v=4y6mF6gY1jI", // Sorry
+                "https://www.youtube.com/watch?v=6W8fCjJ-vdA", // Love Yourself
+                "https://www.youtube.com/watch?v=6vR44Hf5E3A", // What Do You Mean?
+                "https://www.youtube.com/watch?v=JGwWNGJdvx8", // Peaches
+            ];
+            const randomSong = songs[Math.floor(Math.random() * songs.length)];
+            window.open(randomSong, '_blank');
+        }
+
+        // Add scroll effect for images
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.gallery img');
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    img.classList.add('shift'); // Add shift class when image is in view
+                } else {
+                    img.classList.remove('shift'); // Remove shift class when image is out of view
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
